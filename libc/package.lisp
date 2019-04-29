@@ -66,7 +66,8 @@
    #:|strcpy| #:|strncpy| #:|strcat| #:|strncat|
    #:|strlen| #:|strcmp| #:|strncmp| #:|strchr| #:|strrchr|
    #:|strspn| #:|strcspn| #:|strpbrk| #:|strstr| #:|strtok|
-   #:|memchr| #:|memcmp| #:|memset| #:|memcpy| #:|memmove|)
+   #:|memchr| #:|memcmp| #:|memset| #:|memcpy| #:|memmove|
+   #:|strerror|)
   (:documentation
    "with-c-syntax libc package."))
 

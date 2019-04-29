@@ -201,3 +201,11 @@ If no such chars, return NIL."
   ;; > then after the replace operation the subsequence of sequence-1
   ;; > being modified will have unpredictable contents.
   (|memcpy| dest (copy-seq src) count))
+
+(defun |strerror| (eno)
+  ;; FIXME: Shall I use `:EDOM' instead of `osicat-posix:edom'?
+  (if (and (symbolp eno)
+           (eql (symbol-package eno) (find-package '#:osicat-posix)))
+      (let ((errobj (make-instance eno)))
+        (osicat-posix:strerror (osicat-sys:system-error-code errobj)))
+      (osicat-posix:strerror eno)))
